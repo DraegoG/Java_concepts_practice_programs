@@ -6,13 +6,17 @@ Abstract classes work well when creating a base class for other classes that sha
  */
 public interface Vehicle {
 
-    int maxSpeed = 50; //Variables are static and final by default
-    int seats = 4;
+    int maxSpeed = 20; //Variables are static and final by default
+    int seats = 2;
     String subtype = "Vehicle";
 
     public void move();
 
-    public default void stop(){
-        System.out.println("Stopping the vehicle");
+    default void stop(){
+        System.out.println("Stopping the vehicle from interface");
+    }
+
+    static void accelerate() {
+        System.out.println("accelerating");
     }
 }
