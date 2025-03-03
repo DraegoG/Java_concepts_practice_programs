@@ -2,6 +2,7 @@ package Streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,8 +22,21 @@ public class StreamExamples {
         System.out.println("upper case list:" + upperCaseStringList);
 
         //3. How to sort a list using Streams
+        List<Integer> sortedList_asc = listOfNumbers
+                .stream()
+                .sorted()
+                .collect(Collectors.toList());
+        List<Integer> sortedList_desc = listOfNumbers
+                .stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
 
         //4. How to remove duplicate elements from a list
+        List<Integer> uniqueList = listOfNumbers
+                .stream()
+                .distinct()
+                .collect(Collectors.toList());
+
         //5. How to find the maximum and minimum numbers from a list
         //6. How to count elements greater than 5
         long countOfNumbers = listOfNumbers
