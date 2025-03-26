@@ -1,9 +1,6 @@
 package Streams;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StreamExamples {
@@ -38,6 +35,14 @@ public class StreamExamples {
                 .collect(Collectors.toList());
 
         //5. How to find the maximum and minimum numbers from a list
+        Optional<Integer> max = listOfNumbers
+                .stream()
+                .max(Integer::compareTo);
+
+        Optional<Integer> min = listOfNumbers
+                .stream()
+                .min(Integer::compareTo);
+
         //6. How to count elements greater than 5
         long countOfNumbers = listOfNumbers
                 .stream()
