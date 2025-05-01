@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class StreamExamples {
     public static void main(String[] args) {
         //1. Filter even numbers from a list: print and save in another list
-        List<Integer> listOfNumbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+        List<Integer> listOfNumbers = new ArrayList<>(Arrays.asList(1, 21, 3, 14, 15, 6, 17, 28, 89, 10));
         List<Integer> evenNumList = listOfNumbers.stream().filter(element -> (element % 2 == 0)).collect(Collectors.toList());
         System.out.println("even num list:" + evenNumList);
 
@@ -51,9 +51,29 @@ public class StreamExamples {
         System.out.println("Number of integers greater than 5:" + countOfNumbers);
 
         //7. How to join list elements into a single string
+        List<String> stringList = new ArrayList<>(Arrays.asList("abc", "bcd", "cde", "def"));
+        String combinedList = stringList.stream()
+                .reduce("", (a,b) -> {
+                   return a+b;
+                });
+        System.out.println("CombinedList:" + combinedList);
+
         //8. How to convert List to Map
+
         //9. How to find the first element greater than 10
+        Integer firstNumGT10 = listOfNumbers.stream()
+                .filter(x -> x>10)
+                .findFirst()
+                .get();
+
+        System.out.println("First element greater than 10:" + firstNumGT10);
+
+
         //10. How to sum all numbers in the list
+        int totalSum = listOfNumbers.stream()
+                .reduce(0, (a,b) -> {
+                    return a+b;
+                });
         //11. How to check if any number is greater than 50
         //12. How to limit the number of elements in the stream
         //13. How to skip the first 3 elements
