@@ -36,7 +36,7 @@ public class EqualsAndHashCodeExample {
 
         @Override
         public boolean equals(Object o){
-            //1. Check NULL
+            //1. Check NULL or the object is not of same type
             //2. Check if the objects are equal
             //3. Check if the variables inside the objects are equal
             System.out.println("Equals called");
