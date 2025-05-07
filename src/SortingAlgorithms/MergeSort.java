@@ -5,11 +5,11 @@ import java.util.Random;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] arr = new int[50];
+        int[] arr = new int[10];
         //generating random 500 integers
         Random random = new Random();
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(1777) - 888; //for generating numbers between -888 and 888
+            arr[i] = random.nextInt(20) ;
         }
 
         System.out.println("Original array:" + Arrays.toString(arr));
@@ -64,6 +64,6 @@ public class MergeSort {
         }
 
 
-        if (high + 1 - low >= 0) System.arraycopy(temp, low - low, arr, low, high + 1 - low);
+        if (high + 1 - low >= 0) System.arraycopy(temp, 0, arr, low, high + 1 - low);
     }
 }

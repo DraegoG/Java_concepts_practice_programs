@@ -71,9 +71,7 @@ public class StreamExamples {
 
         //10. How to sum all numbers in the list
         int totalSum = listOfNumbers.stream()
-                .reduce(0, (a,b) -> {
-                    return a+b;
-                });
+                .reduce(0, (a,b) -> a+b);
         //11. How to check if any number is greater than 50
         //12. How to limit the number of elements in the stream
         //13. How to skip the first 3 elements
